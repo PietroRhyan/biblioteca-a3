@@ -1,0 +1,70 @@
+.header {
+  width: 100%;
+  padding: 1.5rem 5rem;
+
+  background: #FFF;
+
+  position: fixed;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.header .titleLogo {
+  font-size: 1.8rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.header .titleLogo span {
+  color: #00BFFF;
+}
+
+.header ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.header ul li {
+  font-size: 1.2rem;
+  
+  cursor: pointer;
+  list-style: none;
+  margin-right: 2rem;
+
+  transition: 200ms ease-in-out;
+}
+
+.header ul li:hover {
+  color: #00BFFF;
+}
+
+.header .login {
+  margin-right: 0;
+  padding: .675rem 1.2rem;
+
+  font-size: 1.2rem;
+  font-weight: 400;
+
+  border: none;
+  border-radius: .5rem;
+  background: #3CB371;
+  color: #FFF;
+  
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: space-around;
+
+  transition: 200ms;
+}
+
+.header .login:hover {
+  filter: brightness(0.8);
+}
