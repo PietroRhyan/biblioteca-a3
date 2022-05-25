@@ -1,6 +1,8 @@
 import { useState } from 'react'
 
 import { FiUser } from 'react-icons/fi'
+import { AiOutlineClose } from 'react-icons/ai'
+
 import './styles.css'
 
 export function Header() {
@@ -19,9 +21,16 @@ export function Header() {
           <li>Catálogo</li>
           <li>Sobre</li>
           <button onClick={handleLogin} className="login" type='button'>
-            <FiUser size={22}/>
             {
-              isLogged ? 'Pietro Rhyan' : 'Entrar'
+              isLogged 
+              ? 
+              <> 
+                <AiOutlineClose size={22}/>Pietro Rhyan
+              </> 
+              : 
+              <>
+                <FiUser size={22}/>Entrar
+              </>
             }
           </button>
         </ul>

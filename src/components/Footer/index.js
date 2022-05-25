@@ -9,10 +9,10 @@ export function Footer() {
 
       <div className='socialMediaContainer'>
         <ul>
-          <li><FiInstagram />@pietrorhyann</li>
-          <li><FiInstagram />@pietrorhyann</li>
-          <li><FiInstagram />@pietrorhyann</li>
-          <li><FiInstagram />@pietrorhyann</li>
+          <li><i><FiInstagram  className='icon' /></i>@pietrorhyann</li>
+          <li><i><FiInstagram  className='icon' /></i>@renannobres</li>
+          <li><i><FiInstagram  className='icon' /></i>@davydmoreno1803</li>
+          <li><i><FiInstagram  className='icon' /></i>@fernando</li>
         </ul>
       </div>
 

@@ -32,6 +32,12 @@
 
 .footer ul li {
   list-style: none;
-  
+
   display: flex;
+  gap: 0.25rem;
+}
+
+.footer .icon {
+  display: inline-block;
+  vertical-align: middle;
 }
