@@ -18,8 +18,8 @@ export function Header() {
 
       <nav>
         <ul>
-          <li>Catálogo</li>
-          <li>Sobre</li>
+          <a href='/catalogo'><li>Catálogo</li></a>
+          <a href='/sobre'><li>Sobre</li></a>
           <button onClick={handleLogin} className="login" type='button'>
             {
               isLogged 
