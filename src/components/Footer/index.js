@@ -1,4 +1,4 @@
-import { FiInstagram } from 'react-icons/fi'
+import { FiInstagram, FiGithub } from 'react-icons/fi'
 
 import './styles.css'
 
@@ -12,7 +12,7 @@ export function Footer() {
           <li><i><FiInstagram  className='icon' /></i>@pietrorhyann</li>
           <li><i><FiInstagram  className='icon' /></i>@renannobres</li>
           <li><i><FiInstagram  className='icon' /></i>@davydmoreno1803</li>
-          <li><i><FiInstagram  className='icon' /></i>@fernando</li>
+          <li><i><FiGithub  className='icon' /></i>FernandoJuni0r</li>
         </ul>
       </div>
 
