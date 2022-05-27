@@ -1,11 +1,12 @@
 import { FiInstagram, FiGithub } from 'react-icons/fi'
+import { Logo } from '../Logo'
 
 import './styles.css'
 
 export function Footer() {
   return(
     <footer className="footer">
-      <h2 className="titleLogo">Biblioteca<span>A3</span></h2>
+      <Logo size='1.5rem' />
 
       <div className='socialMediaContainer'>
         <ul>

@@ -1,0 +1,99 @@
+.loginContainer {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  
+
+  background: rgb(242, 242, 242);
+}
+
+.loginInfo {
+  min-width: 280px;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #FFF;
+
+  position: absolute;
+  top: 40%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.loginInfo form {
+  margin: 2rem 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 0.25rem;
+}
+
+form input {
+  width: 18rem;
+  border: none;
+  background: rgb(242, 242, 242);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+form input:last-child {
+  margin-bottom: 0;
+}
+
+input:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.buttonGroup {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttonGroup span {
+  font-size: 1rem;
+  color: #00BFFF;
+  
+}
+
+.buttonGroup .submitButton {
+  padding: .5rem 1rem;
+
+  font-size: 1em;
+  font-weight: 400;
+
+  border: none;
+  border-radius: .5rem;
+  background: #3CB371;
+  color: #FFF;
+  
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: space-around;
+
+  transition: 200ms;
+}
+
+.buttonGroup .submitButton:hover, 
+.buttonGroup .submitButton:focus {
+  filter: brightness(0.8);
+}
+
+.buttonGroup span:hover, 
+.buttonGroup span:focus {
+  border-bottom: 1px solid #00BFFF;
+}

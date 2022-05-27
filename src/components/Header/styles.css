@@ -15,16 +15,6 @@
 
 }
 
-.header .titleLogo {
-  font-size: 1.8rem;
-  font-weight: 400;
-  cursor: pointer;
-}
-
-.header .titleLogo span {
-  color: #00BFFF;
-}
-
 .header ul {
   display: flex;
   align-items: center;

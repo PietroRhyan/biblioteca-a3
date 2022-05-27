@@ -1,13 +1,8 @@
 import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 
 import { App } from './App';
 
 import './styles/global.css'
 import './styles/commomStyles.css'
 
-render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-, document.getElementById('root'));
+render(<App />, document.getElementById('root'));

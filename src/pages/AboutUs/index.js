@@ -1,7 +1,14 @@
-
+import { Header } from '../../components/Header'
+import { Footer } from '../../components/Footer'
 
 export function AboutUs() {
   return(
-    <h1>Sobre</h1>
+    <>
+      <Header />
+      <div className="container">
+        <h1>Sobre</h1>
+      </div>
+      <Footer />
+    </>
   )
 }
