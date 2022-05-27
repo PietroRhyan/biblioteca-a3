@@ -9,10 +9,30 @@ export function Footer() {
 
       <div className='socialMediaContainer'>
         <ul>
-          <li><i><FiInstagram  className='icon' /></i>@pietrorhyann</li>
-          <li><i><FiInstagram  className='icon' /></i>@renannobres</li>
-          <li><i><FiInstagram  className='icon' /></i>@davydmoreno1803</li>
-          <li><i><FiGithub  className='icon' /></i>FernandoJuni0r</li>
+          <a href='https://www.instagram.com/pietro_rhyann/' target='_blank'>
+            <li>
+              <i><FiInstagram  className='icon' /></i>
+              @pietrorhyann
+            </li>
+          </a>
+          <a href='https://www.instagram.com/renannobres/' target='_blank'>
+            <li>
+              <i><FiInstagram  className='icon' /></i>
+              @renannobres
+            </li>
+          </a>
+          <a href='https://www.instagram.com/davydmoreno1803/' target='_blank'>
+            <li>
+              <i><FiInstagram  className='icon' /></i>
+              @davydmoreno1803
+            </li>
+          </a>
+          <a href='https://github.com/FernandoJuni0r' target='_blank'>
+            <li>
+              <i><FiGithub className='icon' /></i>
+              FernandoJuni0r
+            </li>
+          </a>
         </ul>
       </div>
 

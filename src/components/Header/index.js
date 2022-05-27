@@ -14,7 +14,7 @@ export function Header() {
 
   return(
     <header className="header">
-      <h2 className="titleLogo">Biblioteca<span>A3</span></h2>
+      <a href='/'><h2 className="titleLogo">Biblioteca<span>A3</span></h2></a>
 
       <nav>
         <ul>

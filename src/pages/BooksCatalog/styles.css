@@ -1,0 +1,60 @@
+h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  
+  margin-bottom: 2rem;
+}
+
+.booksCatalog {
+  width: 80%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 1rem;
+}
+
+.booksCatalog .book {
+  width: 200px;
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  
+  gap: 0.3rem;
+}
+
+.book .bookImage {
+  width: 75%;
+  height: 70%;
+
+  background: #659;
+}
+
+.book .bookImage img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.book a {
+  width: 100%;
+}
+
+.book .bookInfo h4 {
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+}
+
+.book .bookInfo p {
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.book .bookInfo small {
+  font-size: 0.8rem;
+}

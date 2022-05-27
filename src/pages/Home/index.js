@@ -9,7 +9,9 @@ export function Home() {
       <Header />
 
       <div className="container">
-        
+        <section>
+          <h1>Home</h1>
+        </section>
       </div>
 
       <Footer />

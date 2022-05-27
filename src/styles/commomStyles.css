@@ -1,10 +1,12 @@
 .container {
   max-width: 1080px;
-  min-height: 70vh;
 
   margin: 8rem auto 4rem;
-  
-  background: #333;
+}
+
+body {
+  scrollbar-width: 10px;
+  scrollbar-color: rgba(111, 111, 111, 1);
 }
 
 body::-webkit-scrollbar {
