@@ -5,6 +5,11 @@
   margin: 8rem auto 4rem;
 }
 
+.container h1 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
 body {
   scrollbar-width: 10px;
   scrollbar-color: rgba(111, 111, 111, 1);
