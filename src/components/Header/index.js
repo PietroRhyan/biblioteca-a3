@@ -15,30 +15,29 @@ export function Header() {
   function handleLogin() {
     setIsLogged(!isLogged)
   }
-
-  return(
+  
+  return (
     <header className="header">
-      <Logo size='1.8rem'/>
+      <Logo size='1.8rem' />
 
       <nav>
         <ul>
           <Link to='/catalogo'><li>Catálogo</li></Link>
           <Link to='/sobre'><li>Sobre</li></Link>
-          <Link to='/signIn'>
+          {
+            isLogged
+            ?
+            <>
+              <Link to='/cadastro-de-livros'><li>Cadastrar livros</li></Link>  
+              <button onClick={handleLogin} className="login" type='button'>
+                <AiOutlineClose size={22} />Pietro Rhyan
+              </button>
+            </>
+            :
             <button onClick={handleLogin} className="login" type='button'>
-              {
-                isLogged 
-                ? 
-                <> 
-                  <AiOutlineClose size={22}/>Pietro Rhyan
-                </> 
-                : 
-                <>
-                  <FiUser size={22}/>Entrar
-                </>
-              }
+              <FiUser size={22} />Entrar
             </button>
-          </Link>
+          }
         </ul>
       </nav>
     </header>

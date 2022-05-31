@@ -1,21 +1,55 @@
+import { useState } from 'react';
 import { FiTrash, FiEdit, FiPlus } from 'react-icons/fi'
 
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
+import { ModalAddBook } from '../../components/ModalAddBook';
+import { ModalEditBook } from '../../components/ModalEditBook';
 
 import './styles.css'
 
 export function BooksRegistration() {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [editModalIsOpen, setEditModalIsOpen] = useState(false)
+
+  function handleModalIsOpen() {
+    setModalIsOpen(!modalIsOpen)
+  }
+
+  function handleEditModalIsOpen() {
+    setEditModalIsOpen(!editModalIsOpen)
+  }
+
+  function handleAddBook() {
+
+  }
+
+  function handleUpdateBook() {
+
+  }
+
   return (
     <>
       <Header />
+      <ModalAddBook 
+        isOpen={modalIsOpen}
+        setIsOpen={handleModalIsOpen}
+        handleAddBook={handleAddBook}
+      />
+      <ModalEditBook
+        isOpen={editModalIsOpen}
+        setIsOpen={handleEditModalIsOpen}
+        handleUpdateBook={handleUpdateBook}
+      />
+
       <div className="container">
         <div className="topContent">
           <h1>Cadastro de livros</h1>
-          <p className='addBook'>
+          <p className='addBook' onClick={handleModalIsOpen}>
             <FiPlus /> Novo livro
           </p>
         </div>
+
         <div className="tableContent">
           <table>
             <thead>
@@ -37,7 +71,7 @@ export function BooksRegistration() {
                 <td>Saraiva</td>
                 <td>https://www.teste.com</td>
                 <td className="edit">
-                  <FiEdit size={20} style={{
+                  <FiEdit size={20} onClick={handleEditModalIsOpen} style={{
                     cursor: 'pointer',
                   }} />
                 </td>
@@ -54,7 +88,7 @@ export function BooksRegistration() {
                 <td>Martin Claret</td>
                 <td>https://www.pdfpublico.com</td>
                 <td className="edit">
-                  <FiEdit size={20} style={{
+                  <FiEdit size={20} onClick={handleEditModalIsOpen} style={{
                     cursor: 'pointer',
                   }} />
                 </td>

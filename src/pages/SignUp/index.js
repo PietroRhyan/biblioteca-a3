@@ -4,11 +4,16 @@ import { Logo } from '../../components/Logo'
 import './styles.css'
 
 export function SignUp() {
+  function handleSubmit(event) {
+    event.preventDefault()
+    window.alert('Usuário criado!')
+  }
+
   return (
     <div className="loginContainer">
       <div className="loginInfo">
         <Logo size='1.5rem' />
-        <form action="">
+        <form action="" onSubmit={(e) => handleSubmit(e)}>
           <label htmlFor="email">Nome</label>
           <input
             type='text' name='nome' id='nome' placeholder='Digite seu nome...' maxLength={150} required
@@ -21,15 +26,15 @@ export function SignUp() {
           <input
             type='password' name='senha' id='senha' placeholder='Digite sua senha...' maxLength={150} required
           />
+          
+          <div className="buttonGroup">
+            <Link to='/signIn'>
+              <span>Já tenho uma conta</span>
+            </Link>
+
+            <button type='submit' className='submitButton'>Cadastrar</button>
+          </div>
         </form>
-
-        <div className="buttonGroup">
-          <Link to='/signIn'>
-            <span>Já tenho uma conta</span>
-          </Link>
-
-          <button type='submit' className='submitButton'>Cadastrar</button>
-        </div>
       </div>
     </div>
   )
