@@ -31,7 +31,7 @@ export function BooksCatalog() {
             <a href='#'>
               <div className="bookInfo">
                 <h4>Livro achado no mato</h4>
-                <p>Autor: Albert Einstein</p>
+                <p>Autor: Nobre, Renan</p>
                 <small><i>Editora: Panini</i></small>
               </div>
             </a>
@@ -67,7 +67,7 @@ export function BooksCatalog() {
             <a href='#'>
               <div className="bookInfo">
                 <h4>Livro achado no mato</h4>
-                <p>Autor: Albert Einstein</p>
+                <p>Autor: Nobre, Renan</p>
                 <small><i>Editora: Panini</i></small>
               </div>
             </a>
