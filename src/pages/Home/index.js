@@ -10,7 +10,8 @@ export function Home() {
 
       <div className="container">
         <section>
-          <h1>Home</h1>
+          <h1></h1>
+          
         </section>
       </div>
 
