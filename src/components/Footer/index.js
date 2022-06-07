@@ -37,7 +37,7 @@ export function Footer() {
         </ul>
       </div>
 
-      <p>&copy; Todos os direitos reservados. Feito com amor 🖤 pelos alunos mais lindos de TI</p>
+      <p>&copy; Todos os direitos reservados. Feito com amor 💙 pelos alunos mais lindos de TI</p>
     </footer>
   )
 }
