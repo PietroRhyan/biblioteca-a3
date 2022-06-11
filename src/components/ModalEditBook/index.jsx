@@ -1,14 +1,30 @@
+import api from '../../services/api'
 import { Modal } from '../Modal'
 
 import './styles.css'
 
-export function ModalEditBook({ isOpen, setIsOpen, handleUpdateBook }) {
+export function ModalEditBook({ isOpen, setIsOpen }) {
   function cleanForms() {
     window.alert('Apagado')
   }
 
-  const handleSubmit = async (data) => {
-    handleUpdateBook(data)
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
+    const titulo = event.target.titulo.value
+    const autor = event.target.autor.value
+    const editora = event.target.editora.value
+    const linkLivro = event.target.linkLivro.value
+    const linkImagem = event.target.linkImagem.value
+
+    await api.put('/update_livro', {
+      titulo,
+      autor,
+      editora,
+      linkLivro,
+      linkImagem,
+    })
+
     setIsOpen()
   }
 
@@ -24,8 +40,11 @@ export function ModalEditBook({ isOpen, setIsOpen, handleUpdateBook }) {
         <label htmlFor="editora">Editora</label>
         <input type='text' name='editora' id='editora' maxLength={100} placeholder='Digite o nome da editora' required/>
 
-        <label htmlFor="imagem">Link da Imagem</label>
-        <input type='url' name='imagem' id='imagem' placeholder='Cole aqui o link da imagem'/>
+        <label htmlFor="linkLivro">Link do livro</label>
+        <input type='text' name='linkLivro' id='linkLivro' placeholder='Cole aqui o link do livro' required/>
+
+        <label htmlFor="linlImagem">Link da Imagem</label>
+        <input type='text' name='linkImagem' id='linkImagem' placeholder='Cole aqui o link da imagem'/>
 
         <div className='modalButtonGroup'>
           <button type='button' className='cancelButton' onClick={cleanForms}>

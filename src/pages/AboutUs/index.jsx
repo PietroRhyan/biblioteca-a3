@@ -10,7 +10,7 @@ export function AboutUs() {
       <div className="container">
         <h1>Sobre</h1>
 
-        <section>
+        <section className='aboutUs'>
           <h2>Quem somos?</h2>
           <p>
             Somos alunos do curso de T.I. da faculdade UniAGES, que, por meio deste website, 

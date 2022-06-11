@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FiTrash, FiEdit, FiPlus } from 'react-icons/fi'
 
 import { Footer } from "../../components/Footer";
@@ -6,11 +6,24 @@ import { Header } from "../../components/Header";
 import { ModalAddBook } from '../../components/ModalAddBook';
 import { ModalEditBook } from '../../components/ModalEditBook';
 
+import api from '../../services/api';
+
 import './styles.css'
 
 export function BooksRegistration() {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [editModalIsOpen, setEditModalIsOpen] = useState(false)
+
+  const [books, setBooks] = useState([])
+
+  useEffect(() => {
+    async function getBooks() {
+      const response = await api.get('/livros')
+      setBooks(response.data)
+    }
+
+    getBooks()
+  }, [])
 
   function handleModalIsOpen() {
     setModalIsOpen(!modalIsOpen)
@@ -20,26 +33,25 @@ export function BooksRegistration() {
     setEditModalIsOpen(!editModalIsOpen)
   }
 
-  function handleAddBook() {
+  const handleDeleteBook = async (titulo) => {
+    console.log(titulo)
+    const response = await api.delete('/delete_livro', {
+      titulo,
+    })
 
-  }
-
-  function handleUpdateBook() {
-
+    console.log(response)
   }
 
   return (
     <>
       <Header />
-      <ModalAddBook 
+      <ModalAddBook
         isOpen={modalIsOpen}
         setIsOpen={handleModalIsOpen}
-        handleAddBook={handleAddBook}
       />
       <ModalEditBook
         isOpen={editModalIsOpen}
         setIsOpen={handleEditModalIsOpen}
-        handleUpdateBook={handleUpdateBook}
       />
 
       <div className="container">
@@ -64,40 +76,29 @@ export function BooksRegistration() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Imagem enviada</td>
-                <td>Livro de artes</td>
-                <td>Pietro Rhyan</td>
-                <td>Saraiva</td>
-                <td>https://www.teste.com</td>
-                <td className="edit">
-                  <FiEdit size={20} onClick={handleEditModalIsOpen} style={{
-                    cursor: 'pointer',
-                  }} />
-                </td>
-                <td className="delete">
-                  <FiTrash size={20} style={{
-                    cursor: 'pointer',
-                  }} />
-                </td>
-              </tr>
-              <tr>
-                <td>Imagem enviada</td>
-                <td>O Leviatã</td>
-                <td>Thomas Hobbes</td>
-                <td>Martin Claret</td>
-                <td>https://www.pdfpublico.com</td>
-                <td className="edit">
-                  <FiEdit size={20} onClick={handleEditModalIsOpen} style={{
-                    cursor: 'pointer',
-                  }} />
-                </td>
-                <td className="delete">
-                  <FiTrash size={20} style={{
-                    cursor: 'pointer',
-                  }} />
-                </td>
-              </tr>
+              {books.map((book) => (
+                <tr key={book.id}>
+                  <td>Imagem enviada</td>
+                  <td>{book.titulo}</td>
+                  <td>{book.autor}</td>
+                  <td>{book.editora}</td>
+                  <td>{book.link}</td>
+                  <td className="edit">
+                    <FiEdit size={20} onClick={handleEditModalIsOpen} style={{
+                      cursor: 'pointer',
+                    }} />
+                  </td>
+                  <td className="delete">
+                    <FiTrash 
+                      size={20} 
+                      onClick={() => handleDeleteBook(book.titulo)} 
+                      style={{
+                        cursor: 'pointer',
+                      }}
+                    />
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

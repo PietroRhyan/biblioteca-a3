@@ -1,4 +1,4 @@
-section {
+.aboutUs {
   width: 100%;
   margin-top: 1rem;
   padding: 0 4rem;
@@ -11,11 +11,11 @@ section {
   gap: 1rem;
 }
 
-section h2 {
+.aboutUs h2 {
   font-size: 2.5rem;
   font-weight: 400;
 }
 
-section p {
+.aboutUs p {
   font-size: 1.125rem;
 }

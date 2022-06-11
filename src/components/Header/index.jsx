@@ -34,9 +34,13 @@ export function Header() {
               </button>
             </>
             :
-            <button onClick={handleLogin} className="login" type='button'>
-              <FiUser size={22} />Entrar
-            </button>
+            <>
+              <Link to='/cadastro-de-livros'>
+                <button onClick={handleLogin} className="login" type='button'>
+                  <FiUser size={22} />Entrar
+                </button>
+              </Link>
+            </>
           }
         </ul>
       </nav>

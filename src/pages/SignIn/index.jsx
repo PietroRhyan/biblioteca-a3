@@ -4,16 +4,17 @@ import { Logo } from '../../components/Logo'
 import './styles.css'
 
 export function SignIn() {
-  function handleSubmit(event) {
-    event.preventDefault()
-    window.alert('Teste!')
+
+  function handleSubmit(e){
+    e.preventDefault()
+    window.alert('Teste')
   }
 
   return (
     <div className="loginContainer">
       <div className="loginInfo">
         <Logo size='1.5rem' />
-        <form action="" onSubmit={(e) => handleSubmit(e)}>
+        <form action="" onSubmit={handleSubmit}>
           <label htmlFor="email">E-mail</label>
           <input
             type='email' name='email' id='email' placeholder='Digite seu e-mail...' maxLength={150} required
