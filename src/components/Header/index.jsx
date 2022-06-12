@@ -1,7 +1,7 @@
-import { useState } from 'react'
-
 import { FiUser } from 'react-icons/fi'
 import { AiOutlineClose } from 'react-icons/ai'
+
+import { isAuthenticated } from '../../auth'
 
 import { Link } from 'react-router-dom'
 
@@ -10,12 +10,10 @@ import { Logo } from '../Logo'
 import './styles.css'
 
 export function Header() {
-  const [isLogged, setIsLogged] = useState(false)
-
   function handleLogin() {
-    setIsLogged(!isLogged)
+    //
   }
-  
+
   return (
     <header className="header">
       <Logo size='1.8rem' />
@@ -25,7 +23,7 @@ export function Header() {
           <Link to='/catalogo'><li>Catálogo</li></Link>
           <Link to='/sobre'><li>Sobre</li></Link>
           {
-            isLogged
+            isAuthenticated()
             ?
             <>
               <Link to='/cadastro-de-livros'><li>Cadastrar livros</li></Link>  
@@ -35,8 +33,8 @@ export function Header() {
             </>
             :
             <>
-              <Link to='/cadastro-de-livros'>
-                <button onClick={handleLogin} className="login" type='button'>
+              <Link to='/signIn'>
+                <button className="login" type='button'>
                   <FiUser size={22} />Entrar
                 </button>
               </Link>

@@ -4,7 +4,6 @@ import { Logo } from '../../components/Logo'
 import './styles.css'
 
 export function SignIn() {
-
   function handleSubmit(e){
     e.preventDefault()
     window.alert('Teste')

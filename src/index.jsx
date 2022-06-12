@@ -1,8 +1,15 @@
-import { render } from 'react-dom';
-
 import { App } from './App';
-
 import './styles/global.css'
 import './styles/commomStyles.css'
 
-render(<App />, document.getElementById('root'));
+import { AuthProvider } from './context/AuthProvider';
+
+import { createRoot } from 'react-dom/client';
+const container = document.getElementById('root')
+const root = createRoot(container)
+
+root.render(
+  <AuthProvider>
+    <App />
+  </AuthProvider>
+);

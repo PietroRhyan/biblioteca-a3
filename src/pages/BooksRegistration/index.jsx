@@ -25,6 +25,12 @@ export function BooksRegistration() {
     getBooks()
   }, [])
 
+  async function handleDeleteBook(titulo) {
+    await api.delete('/delete_livro', {
+      titulo,
+    })
+  }
+
   function handleModalIsOpen() {
     setModalIsOpen(!modalIsOpen)
   }
@@ -33,13 +39,9 @@ export function BooksRegistration() {
     setEditModalIsOpen(!editModalIsOpen)
   }
 
-  const handleDeleteBook = async (titulo) => {
-    console.log(titulo)
-    const response = await api.delete('/delete_livro', {
-      titulo,
-    })
-
-    console.log(response)
+  function sendReferenceId(id) {
+    handleEditModalIsOpen()
+    return id
   }
 
   return (
@@ -52,6 +54,7 @@ export function BooksRegistration() {
       <ModalEditBook
         isOpen={editModalIsOpen}
         setIsOpen={handleEditModalIsOpen}
+        sendReferenceId={() => sendReferenceId()}
       />
 
       <div className="container">
@@ -84,9 +87,13 @@ export function BooksRegistration() {
                   <td>{book.editora}</td>
                   <td>{book.link}</td>
                   <td className="edit">
-                    <FiEdit size={20} onClick={handleEditModalIsOpen} style={{
-                      cursor: 'pointer',
-                    }} />
+                    <FiEdit 
+                      size={20} 
+                      onClick={() => sendReferenceId(book.id)}
+                      style={{
+                        cursor: 'pointer',
+                      }} 
+                    />
                   </td>
                   <td className="delete">
                     <FiTrash 
