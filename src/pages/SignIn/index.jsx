@@ -1,12 +1,32 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Logo } from '../../components/Logo'
+import api from '../../services/api'
 
 import './styles.css'
 
 export function SignIn() {
-  function handleSubmit(e){
-    e.preventDefault()
-    window.alert('Teste')
+  const [missingInfo, setMissingInfo] = useState(false)
+
+  async function handleSubmit(event){
+    event.preventDefault()
+    
+    const email = event.target.email.value
+    const senha = event.target.senha.value
+
+    const response = await api.get(`/login?email=${email}&senha=${senha}`, {
+    })
+
+    if(!response.data[0]){
+      setMissingInfo(true)
+      return ;
+    }
+
+    setMissingInfo(false)
+
+    const { nome } = response.data[0]
+    localStorage.setItem('@nomeLogin', nome)
+    window.location.assign('/')
   }
 
   return (
@@ -22,7 +42,7 @@ export function SignIn() {
           <input
             type='password' name='senha' id='senha' placeholder='Digite sua senha...' maxLength={150} required
           />
-
+          { missingInfo && <small>E-mail ou senha incorretos!</small>}
           <div className="buttonGroup">
             <Link to='/signUp'>
               <span>Crie sua conta</span>

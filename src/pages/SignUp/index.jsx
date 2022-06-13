@@ -6,6 +6,8 @@ import api from '../../services/api'
 
 export function SignUp() {
   async function handleSubmit(event) {
+    event.preventDefault()
+
     const nome = event.target.nome.value
     const email = event.target.email.value
     const senha = event.target.senha.value

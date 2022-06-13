@@ -3,15 +3,13 @@ import { Modal } from '../Modal'
 
 import './styles.css'
 
-export function ModalEditBook({ isOpen, setIsOpen, sendReferenceId }) {
+export function ModalEditBook({ isOpen, setIsOpen }) {
   function cleanForms() {
     const forms = document.querySelectorAll('input')
 
     forms.forEach((form) => {
       form.value = ''
     })
-
-    console.log(sendReferenceId())
   }
 
   const handleSubmit = async (event) => {
@@ -21,7 +19,7 @@ export function ModalEditBook({ isOpen, setIsOpen, sendReferenceId }) {
     const linkLivro = event.target.linkLivro.value
     const linkImagem = event.target.linkImagem.value
 
-    const idReference = sendReferenceId()
+    const idReference = localStorage.getItem('@idReferenceToUpdate')
 
     await api.put('/update_livro', {
       "new_titulo": titulo,
@@ -29,7 +27,7 @@ export function ModalEditBook({ isOpen, setIsOpen, sendReferenceId }) {
       "new_editora": editora,
       "new_link": linkLivro,
       "new_linkimagem": linkImagem,
-      "titulo": idReference,
+      "id": idReference,
     })
     
     setIsOpen()

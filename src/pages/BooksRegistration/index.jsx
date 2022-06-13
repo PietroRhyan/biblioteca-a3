@@ -25,9 +25,8 @@ export function BooksRegistration() {
     getBooks()
   }, [])
 
-  async function handleDeleteBook(titulo) {
-    await api.delete('/delete_livro', {
-      titulo,
+  async function handleDeleteBook(id) {
+    await api.delete(`/delete_livro?id=${id}`, {
     })
   }
 
@@ -41,7 +40,7 @@ export function BooksRegistration() {
 
   function sendReferenceId(id) {
     handleEditModalIsOpen()
-    return id
+    localStorage.setItem('@idReferenceToUpdate', id)
   }
 
   return (
@@ -54,7 +53,6 @@ export function BooksRegistration() {
       <ModalEditBook
         isOpen={editModalIsOpen}
         setIsOpen={handleEditModalIsOpen}
-        sendReferenceId={() => sendReferenceId()}
       />
 
       <div className="container">
@@ -98,7 +96,7 @@ export function BooksRegistration() {
                   <td className="delete">
                     <FiTrash 
                       size={20} 
-                      onClick={() => handleDeleteBook(book.titulo)} 
+                      onClick={() => handleDeleteBook(book.id)} 
                       style={{
                         cursor: 'pointer',
                       }}

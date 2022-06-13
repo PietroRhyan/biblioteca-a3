@@ -8,10 +8,14 @@ import { Link } from 'react-router-dom'
 import { Logo } from '../Logo'
 
 import './styles.css'
+import { useState } from 'react'
 
 export function Header() {
+  const [isLogged, setIsLogged] = useState(isAuthenticated())
+
   function handleLogin() {
-    //
+    localStorage.removeItem('@nomeLogin')
+    setIsLogged(isAuthenticated())
   }
 
   return (
@@ -23,12 +27,12 @@ export function Header() {
           <Link to='/catalogo'><li>Catálogo</li></Link>
           <Link to='/sobre'><li>Sobre</li></Link>
           {
-            isAuthenticated()
+            isLogged
             ?
             <>
               <Link to='/cadastro-de-livros'><li>Cadastrar livros</li></Link>  
               <button onClick={handleLogin} className="login" type='button'>
-                <AiOutlineClose size={22} />Pietro Rhyan
+                <AiOutlineClose size={22} />{localStorage.getItem('@nomeLogin')}
               </button>
             </>
             :
