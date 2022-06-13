@@ -28,6 +28,9 @@ export function BooksRegistration() {
   async function handleDeleteBook(id) {
     await api.delete(`/delete_livro?id=${id}`, {
     })
+
+    const recountBooks = books.filter(book => book.id !== id)
+    setBooks(recountBooks)
   }
 
   function handleModalIsOpen() {

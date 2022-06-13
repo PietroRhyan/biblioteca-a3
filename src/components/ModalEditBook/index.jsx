@@ -30,6 +30,7 @@ export function ModalEditBook({ isOpen, setIsOpen }) {
       "id": idReference,
     })
     
+    localStorage.removeItem('@idReferenceToUpdate')
     setIsOpen()
   }
 
