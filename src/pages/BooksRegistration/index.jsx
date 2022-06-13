@@ -80,7 +80,7 @@ export function BooksRegistration() {
               <tr>
                 <th>Foto</th>
                 <th>Título</th>
-                <th>Autor</th>
+                <th>Autor(a)</th>
                 <th>Editora</th>
                 <th>Link</th>
                 <th></th>

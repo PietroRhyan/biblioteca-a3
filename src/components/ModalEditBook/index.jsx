@@ -3,7 +3,7 @@ import { Modal } from '../Modal'
 
 import './styles.css'
 
-export function ModalEditBook({ isOpen, setIsOpen }) {
+export function ModalEditBook({ isOpen, setIsOpen }) {  
   function cleanForms() {
     const forms = document.querySelectorAll('input')
 
@@ -49,7 +49,7 @@ export function ModalEditBook({ isOpen, setIsOpen }) {
         <input type='text' id='linkLivro' placeholder='Cole aqui o link do livro' required/>
 
         <label htmlFor="linlImagem">Link da Imagem</label>
-        <input type='text' id='linkImagem' placeholder='Cole aqui o link da imagem'/>
+        <input type='text' id='linkImagem' placeholder='Cole aqui o link da imagem' />
 
         <div className='modalButtonGroup'>
           <button type='button' className='cancelButton' onClick={cleanForms}>

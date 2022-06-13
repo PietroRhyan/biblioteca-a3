@@ -9,7 +9,7 @@ export function Book(props) {
       <a href={props.bookLink} target='_blank'>
         <div className="bookInfo">
           <h4>{props.title}</h4>
-          <p>{`Autor: ${props.author}`}</p>
+          <p>{`Autor(a): ${props.author}`}</p>
           <small><i>{`Editora: ${props.publishing}`}</i></small>
         </div>
       </a>
