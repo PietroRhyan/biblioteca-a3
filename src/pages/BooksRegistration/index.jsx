@@ -46,6 +46,14 @@ export function BooksRegistration() {
     localStorage.setItem('@idReferenceToUpdate', id)
   }
 
+  function shortLink(link) {
+    let formatLink = link.slice(0, 27)
+    formatLink = formatLink.split('')
+    formatLink.push('...')
+
+    return formatLink
+  }
+
   return (
     <>
       <Header />
@@ -82,11 +90,11 @@ export function BooksRegistration() {
             <tbody>
               {books.map((book) => (
                 <tr key={book.id}>
-                  <td>Imagem enviada</td>
+                  <td className='staticInfo'>Imagem enviada</td>
                   <td>{book.titulo}</td>
                   <td>{book.autor}</td>
                   <td>{book.editora}</td>
-                  <td>{book.link}</td>
+                  <td>{book.link.length > 30 ? shortLink(book.link) : book.link}</td>
                   <td className="edit">
                     <FiEdit 
                       size={20} 
