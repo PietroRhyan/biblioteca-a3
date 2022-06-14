@@ -1,8 +1,8 @@
-# Biblioteca A3
+# Biblioteca A3 📚
 
 Projeto desenvolvido para obtenção de nota parcial do 2º Período para a UC de Sistemas Distribuídos e Mobile.
 
-## Tecnologias usadas
+## Tecnologias usadas 🔧
 
 As tecnologias adotadas no Frontend foram:
 
@@ -11,9 +11,9 @@ As tecnologias adotadas no Frontend foram:
   <li>Axios;</li>
 </ul>
 
-## Guia de instalação
+## Guia de instalação 💻
 
-Primeiro, você deve baixar o código zipado ou utilizar o git clone com HTTP ou SSH do repositório:
+Primeiro, você deve baixar o código zipado ou utilizar o git clone com HTTP ou SSH do repositório
 
 ```git
   git clone link-do-repo
